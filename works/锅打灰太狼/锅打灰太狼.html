@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	     *{padding: 0;margin:0;}
+	     a{text-decoration: none;}
+        #wrap{width: 320px;height: 480px;background: url(img/game_bg.jpg);}
+        .center{position: absolute;margin:auto;left: 0;right: 0;top: 0;bottom: 0;}
+        #fraction{padding-top: 12px;font-weight: bold;color: #fff;font-size: 20px;padding-left: 60px;}
+        #time{width: 180px;height: 18px;background: url(img/progress.png);position: absolute;left: 63px;top: 64px;}
+        #wolfs{position: absolute;}
+        #wolfs img{position: absolute;}
+        #startMenu{width: 320px;position: absolute;left: 115px;top: 200px;}
+        #start,#endMenu,#reload{line-height:50px; font-size:30px; font-weight:bold; color:#F00; display:block;text-decoration:none;}
+        #endMenu{width: 260px;display: none;position: absolute;top: 200px;left: 50px;}
+        #reload{position: absolute;left: 85px;bottom: 80px;display: none;z-index: 2;}
+        #rules{width: 100%;position: absolute;bottom: 0;border:none;padding: 10px 0;cursor: pointer;background: #F0C880;}
+        #rule{display: none;position: absolute;width: 100%;text-align: center;background: #000;opacity: 0.7;padding-top: 170px;z-index: 3;top: 0;}
+        #rule p{padding: 20px 0;font-size: 20px;color: #fff;}
+        #rule a{font-size: 20px;color: red;padding-bottom: 20px;display: block;}
+	</style>
+</head>
+<body>
+	<div id="wrap" class="center">
+        <div id="fraction">0</div>
+        <div id="time"></div>
+        <div id="wolfs"></div>
+        <div id="startMenu">
+            <a href="##" id="start">Start</a>
+        </div>
+        <div id="endMenu"></div>
+           <a href="##" id="reload">重新开始</a>
+        <button id="rules">游戏规则</button>
+      <div id="rule">
+        <p>游戏规则:</p>
+        <p>1.游戏时间:60s</p>
+        <p>2.拼手速,殴打灰太狼+10分</p>
+        <p>3.殴打小灰灰-10分</p>
+        <a href="##" id="close">[关闭]</a>
+      </div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+   //分数
+   var fraction=document.getElementById('fraction');
+   //进度条
+   var timeLine=document.getElementById('time');
+   //狼窝
+   var wolfs=document.getElementById('wolfs');
+   //开始按钮
+   var startBtn=document.getElementById('startMenu');
+   //开始菜单
+   var startMenu=document.getElementById('startMenu')
+   //重新开始
+   var reloadBtn=document.getElementById('reload');
+   //结束按钮
+   var endMenu=document.getElementById('endMenu');
+   //游戏规则按钮
+  var rulesBtn=document.getElementById('rules');
+  //游戏说明
+  var ruleList=document.getElementById('rule');
+  //关闭按钮
+  var closeBtn=document.getElementById('close');
+   //洞穴的坐标
+   var arrPos = [
+		{l:"98px",t:"80px"},
+		{l:"17px",t:"120px"},
+		{l:"15px",t:"180px"},
+		{l:"30px",t:"255px"},
+		{l:"122px",t:"235px"},
+		{l:"207px",t:"255px"},
+		{l:"200px",t:"175px"},
+		{l:"187px",t:"105px"},
+		{l:"100px",t:"155px"}
+	];
+
+     var createWolfTimer=0;//创建狼定时器
+     var timeLineTimer=0;//倒计时定时器
+     //分数
+     var score=0;
+     //点击开始
+    startBtn.onclick=function(){
+        startMenu.style.display='none';
+        //进度条开始走
+         timeLineRun();
+         //开启定时器，创建狼 进行游戏         
+         gameStartFn();
+       }  
+    
+      function gameStartFn(){
+          createWolfTimer=setInterval(function(){
+                createWolf();
+        },800);
+      }
+
+
+      //进度条变化 
+      function timeLineRun(){
+      	 timeLineTimer=setInterval(function(){
+            var proWidth=timeLine.offsetWidth ;                         
+               proWidth--;
+              if(proWidth < 0){
+                  clearInterval(timeLineTimer); 
+                  //停止产生狼
+                  clearInterval(createWolfTimer);
+                  // wolfs.innerHTML=" ";
+                  endMenu.innerHTML="Game Over!<br/>你的得分是："+fraction.innerHTML;
+                  endMenu.style.display="block";
+                //出现重新开始
+                  reloadBtn.style.display="block";
+                  return;
+              }
+            timeLine.style.width=proWidth+'px';
+      	},100);
+      }
+      
+    //生成指定范围内的随机数
+     function rand(min,max){
+          return parseInt(min+(max-min)*Math.random());
+     }
+
+     //创建狼
+     function createWolf(){
+     	//创建狼
+	   var wolfImg=document.createElement('img');
+	   //设置狼的种类   随机产生h/x 80%/20%
+	   wolfImg.type= Math.random() >0.8? 'x':'h';
+     //设置初始图片的编号
+     wolfImg.index=0; 
+     wolfImg.src='img/'+wolfImg.type+wolfImg.index+'.png';  
+	   //随机获取狼窝的位置
+	    wolfImg.position=rand(0,9);
+     //设置未被点击
+     wolfImg.clicked=true;     
+
+     if(isRepeated(wolfImg)){
+           return;
+     }
+
+	   //设置洞穴位置
+	   wolfImg.style.left=arrPos[wolfImg.position].l;
+	   wolfImg.style.top=arrPos[wolfImg.position].t;
+
+	   //让狼动起来
+     up(wolfImg);
+     clickHit(wolfImg);
+      
+     wolfs.appendChild(wolfImg);
+  }      
+       //排重
+     function isRepeated(obj){
+        var children=wolfs.children;
+        for(var i=0;i<children.length;i++){
+          if(children[i].position.l == obj.position.l){
+                return true;
+          }
+        }
+        return false;
+      }
+   
+   //挨打动画
+     function clickHit(obj){
+          obj.onclick=function(){
+            if(!obj.clicked){
+                 return;
+            }
+             clearInterval(obj.upTimer);//停止狼的运动
+             clearInterval(obj.downTimer);
+             //清除狼挨打的定时器
+             clearInterval(obj.hitTimer);
+             //
+             //计算分数
+             scoreFn(obj);              
+               
+              obj.index=5;
+              obj.hitTimer=setInterval(function(){
+                   obj.index++;
+                   if(obj.index>9){
+                        clearInterval(obj.hitTimer);
+                        wolfs.removeChild(obj);
+                        return;
+                   }
+                   obj.src='img/'+obj.type+obj.index+'.png'
+              },100);
+                   obj.clicked=!obj.clicked;
+          }
+     }
+      //分数
+     function scoreFn(obj){
+   
+          if(obj.type=='h'){
+              score+=10;
+          }else{
+             score-=10;
+          }
+        fraction.innerHTML=score;
+     }
+
+   //狼向上运动
+   function up(obj) {
+     obj.upTimer=setInterval(function(){
+           obj.index++;
+           if(obj.index>5){
+               clearInterval(obj.upTimer);
+               //狼向下运动
+               down(obj);
+               return;
+           }
+           obj.src='img/'+obj.type+obj.index+'.png';
+     },100);
+   }
+  //狼向下运动
+  function down(obj) {
+    obj.downTimer=setInterval(function(){
+      obj.index--;
+      if(obj.index < 0){
+         clearInterval(obj.downTimer);
+         wolfs.removeChild(obj);
+         return;
+      }
+      obj.src='img/'+obj.type+obj.index+'.png';
+    },100)
+  }
+  //点击游戏规则按钮 显示规则列表
+  rulesBtn.onclick=function(){
+      ruleList.style.display='block';
+  }
+  closeBtn.onclick=function(){
+      ruleList.style.display='none';
+  }
+  //重新开始
+      reloadBtn.onclick=function(){
+
+           window.location.reload();
+      }
+      
+
+
+</script>

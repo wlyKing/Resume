@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+         body{text-align: center;padding-top: 100px;}
+         canvas{box-shadow: 0 0 30px #333;}
+	</style>
+</head>
+<body>
+	 <canvas id="box" width="500px" height="500px"></canvas>
+</body>
+</html>
+ <script>
+	 var box = document.getElementById('box');
+	 var cxt = box.getContext('2d');
+	 // 时钟动起来
+	 var timer = null;
+	 function clock(){
+		 var date = new Date();
+		 var h = date.getHours();
+		 h = h + h/60;
+		 h = h>12? h-12:h;
+		 var m = date.getMinutes();
+		 var s = date.getSeconds();
+		 // 清画布
+		 cxt.clearRect(0,0,500,500); 
+		 // 画表盘
+		 cxt.strokeStyle = '#AE81FF';
+		 cxt.lineWidth = 10;
+		 cxt.beginPath();
+		 cxt.arc(250,250,100,0,Math.PI*2);
+		 cxt.stroke();
+		 // 画时钟刻度
+		 for(var i=0; i<12; i++){
+			 cxt.save();//存储当前状态，可以临时改变
+			 cxt.translate(250,250);
+			 cxt.rotate(30*i*Math.PI/180);
+			 cxt.lineWidth = 4;
+			 cxt.beginPath();
+			 cxt.moveTo(0,-80);
+			 cxt.lineTo(0,-92);
+			 cxt.stroke();
+			 cxt.restore();//恢复以前的值
+		 }
+		 //画分钟刻度
+		 for(var i=0; i<60; i++){
+			 cxt.save();
+			 cxt.translate(250,250);
+			 cxt.rotate(6*i*Math.PI/180);
+			 cxt.lineWidth = 3;
+			 cxt.beginPath();
+			 cxt.moveTo(0,-86);
+			 cxt.lineTo(0,-92);
+			 cxt.stroke();
+			 cxt.restore();
+		 }
+		 // 画时针
+		 cxt.save();
+		 cxt.lineWidth = 5;
+		 cxt.translate(250,250);
+		 cxt.rotate(h*30*Math.PI/180);
+		 cxt.beginPath();
+		 cxt.moveTo(0,6);
+		 cxt.lineTo(0,-40);
+		 cxt.stroke();
+		 cxt.restore();
+		 // 画分针
+		 cxt.save();
+		 cxt.lineWidth = 3;
+		 cxt.translate(250,250);
+		 cxt.rotate(m*6*Math.PI/180);
+		 cxt.beginPath();
+		 cxt.moveTo(0,8);
+		 cxt.lineTo(0,-60);
+		 cxt.stroke();
+		 cxt.restore();
+		 // 画秒针
+		 cxt.save();
+		 cxt.lineWidth = 1;
+		 cxt.translate(250,250);
+		 cxt.rotate(s*6*Math.PI/180);
+		 cxt.beginPath();
+		 cxt.moveTo(0,10);
+		 cxt.lineTo(0,-75);
+		 cxt.stroke();
+		 cxt.restore();
+		 // 画中心的小圆固定三根针
+		 cxt.save();
+		 cxt.beginPath();
+		 cxt.fillStyle = '#0f0';
+		 cxt.lineWidth = 2;
+		 cxt.translate(250,250);
+		 cxt.arc(0,0,2,0,Math.PI*2,false);
+		 cxt.stroke();
+		 cxt.fill();
+		 cxt.restore();
+		 // 画秒针上的圆
+		 cxt.save();
+		 cxt.fillStyle = '#f00';
+		 cxt.lineWidth = 2;
+		 cxt.translate(250,250);
+		 cxt.rotate(s*6*Math.PI/180);
+		 cxt.beginPath();
+		 cxt.arc(0,-60,2,0,360,false);
+		 cxt.stroke();
+		 cxt.fill();
+		 cxt.restore();
+	 }
+	 clock();
+	 timer = setInterval(clock,1000);
+ </script>

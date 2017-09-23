@@ -1,0 +1,37 @@
+.main{width: 1140px; height:2150px;margin: 0 auto;}
+.main  h2{font-size: 19px; color: #010101;line-height: 36px;height: 36px;margin-top: 35px;margin-left: 15px;}
+.main  p{font-size: 13px;color: #a8a8a8;line-height: 36px;margin-bottom: 1px;margin-left: 15px;}
+span{color: #f07263;}
+
+.main  .comment{width:813px;height:417px;border: 6px solid #ed5844;margin-left: 15px; position: relative;}
+.comment  img{width: 813px;height: 417px;}
+.comment .cem{width: 82px;height: 41px; position: absolute;left: 731px;bottom:0px ;}
+.comment .c_icon1{ width: 42px;height: 41px;margin-right: 3px;background-image: url(../images/blog_icon_03.jpg);background-repeat:  no-repeat;background-position: 0 bottom;float: left;}
+.comment .c_icon2{width: 37px;height: 41px;background:url(../images/blog_bg_06.jpg) no-repeat 0 bottom ;float: left;}
+.main .left{width: 840px;float: left;}
+.main .left h3{font-size: 26px;color: #282826;font-weight: normal;margin-left: 17px;line-height: 61px;height: 61px;margin-top: 19px;}
+.main .text{width: 808px;height: 38px;background: #eeeeee;margin-bottom: 40px;font-size: 14px;color: #6a6a6a;}
+.main label{font-size: 15px;color: #505050;line-height: 21px;height: 21px;}
+.main textarea{ width: 808px;height: 150px;background: #eee;}
+.main .sub{width: 145px;height: 51px;background: #ed5844;border-radius: 4px;box-shadow: 0 0 8px rgba(0,0,0,0.5) inset;margin: 16px 0 16px 23px;font-size: 16px;color: #fffffd;}
+.main .comments{width: 623px;height: 199px;border: 1px solid #d4d4d4;padding-bottom: 25px;margin-bottom: 40px;}
+.comments .l_pic{float: left;margin: 17px 48px 24px 15px;}
+.comments img{width: 158px;}
+.comments .r_text h4{font-size: 14px;color: #5b5b59;line-height: 20px;height: 20px; margin-top: 15px;}
+.comments  .r_text p {font-size: 13px;color: #a8a8a8; line-height: 23px;}
+.comments .r_text span  {font-size: 13px;color: #c6c6c6;margin-top:24px ;}
+.comments a{display: block;width: 99px;height: 43px;background: #ed5844;border-radius: 4px;box-shadow: 0 0 8px rgba(0,0,0,0.5) inset;font-size: 16px;color: #fffeff;font-weight: bold;line-height: 43px;text-align: center;float: right;margin-right: 37px;}
+.main  .right{float: left;width: 286px;}
+.main .right .bs{font-size: 19px; color: #010101; font-weight:normal;line-height: 68px;height: 68px;margin-top: 17px;padding-left: 14px;}
+.main .right form{margin-left: 30px; height: 42px;}
+.main .right .l_search{width: 212px;height: 42px;border: 1px solid #dbdbdb;border-right:none;padding-left: 15px;float: left;font-size: 14px;color: #9f9fa1;}
+.main .right .r_search{width: 28px;height: 44px;border: 1px solid #dbdbdb;border-left:none;background: url(../images/search.png) no-repeat left center;float: left;cursor: pointer;}
+.main .cate{font-size: 19px; color: #010101; font-weight:normal;line-height: 52px;height: 52px;padding-left: 14px;}
+.main .right li{padding-left: 56px;background: url(../images/b_arrow.png) no-repeat 33px center;}
+.main .right li a{font-size: 12px;color: #9f9fa1;line-height: 23px;}
+.main .right li a:hover{color: #F94F01;}
+.main .right .pic_list{width: 300px;height: 246px;padding: 3px 0 0 34px;}
+.right .pic{width: 114px;height: 73px;position: relative;float: left;margin: 0 12px 8px 0;}
+.right .pic img{width: 100%;height: 100%;}
+.right .pic_list a{width: 100%;height: 100%;position: absolute;left:0;top:0;display: none;background: rgba(0,0,0,0.5);}
+.right .pic:hover a{display: block;}

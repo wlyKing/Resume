@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content=" width=device-width,initial-scale=1.0" />
+		<title>OA后台系统</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/Chart.js"></script>
+		<script src="js/script.js"></script>
+		<style>
+			.user-img {
+				display: inline-block;
+				height: 40px;
+				width: 40px;
+				margin-top: 5px;
+				padding: 0;
+			}
+			
+			.myLable {
+				padding-top: 10px;
+			}
+			
+			.pt20 {
+				padding-top: 20px;
+			}
+			
+			.list-group li {
+				color: #3279b7;
+			}
+			
+			.list-group span {
+				color: #347ab8;
+			}
+			
+			.list-group-item>.badge {
+				float: none;
+				color: #fff;
+			}
+			
+			.navbar-nav li span {
+				background: #F14639;
+				color: #fff;
+			}
+			
+			.wh64 {
+				width: 64px;
+				height: 64px;
+			}
+			
+			.mar_t15 {
+				margin-top: 15px;
+			}
+			.mar_b15{
+				margin-bottom: 15px;
+			}
+			.bor{ border: 1px solid #ddd;padding: 10px;}
+
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+                </button>
+					<a class="navbar-brand" href="#">OA办公系统</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li >
+							<a href="oa后台系统.html" class="glyphicon glyphicon-home">&nbsp;管理首页</a>
+						</li>
+						<li>
+							<a href="user_list.html" class="glyphicon glyphicon-user">&nbsp;用户管理</a>
+						</li>
+						<li>
+							<a href="content.html" class="glyphicon glyphicon-list-alt">&nbsp;内容管理</a>
+						</li>
+						<li>
+							<a href="tag.html" class="glyphicon glyphicon-tag">&nbsp;标签管理</a>
+						</li>
+						<li class="active">
+							<a href="#" class="glyphicon glyphicon-envelope">&nbsp;我的邮箱<span class="badge">42</span></a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<div class="user-img">
+								<img src="images/touxiang.jpg" class="img-responsive" />
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle " data-toggle="dropdown">
+								&nbsp;管理员 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Action</a>
+								</li>
+								<li>
+									<a href="#">Another action</a>
+								</li>
+								<li>
+									<a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingOne">
+					      <h4 class="panel-title">
+					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					                                  最近联系人
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="panel-body">
+                              <ul class="list-group">
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;赵飞燕
+								  </li>
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;王鸥
+								  </li>
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;吴昕
+								  </li>
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;张三
+								  </li>
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;李四
+								  </li>
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;潘玮柏
+								  </li>
+								  <li class="list-group-item">
+								  	<span class="glyphicon glyphicon-star-empty"></span>&nbsp;郑凯
+								  </li>
+							  </ul>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingTwo">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					                                                  我的同事
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default">
+					    <div class="panel-heading" role="tab" id="headingThree">
+					      <h4 class="panel-title">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					                                           我的客户
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="panel panel-default">
+					  <div class="panel-heading">已读邮件</div>
+					    <ul class="list-group">
+						  <li class="list-group-item"><span class="glyphicon glyphicon-edit"></span>&nbsp;响应式Web设计工作原理</li>
+						  <li class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;响应式Web设计工作原理</li>
+						  <li class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;响应式Web设计工作原理</li>
+						  <li class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;响应式Web设计工作原理</li>
+						  <li class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;响应式Web设计工作原理</li>
+						  <li class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;响应式Web设计工作原理</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		    <div class="row mar_t15">
+		    	<div class="col-md-4 col-md-offset-4">
+		    		<nav aria-label="Page navigation">
+						  <ul class="pagination">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+                    </nav>
+		    	</div>
+		    </div>
+		    <div class="row mar_t15">
+		    	<div class="col-md-4 col-md-offset-5">
+		    		<p>联系方式:12254465835</p>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+
+</html>
+<script>
+    $(function(){
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            // 获取已激活的标签页的名称
+            var activeTab = $(e.target).text();
+            // 获取前一个激活的标签页的名称
+            var previousTab = $(e.relatedTarget).text();
+            $(".active-tab span").html(activeTab);
+            $(".previous-tab span").html(previousTab);
+        });
+    });
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+        .wrap{width: 980px;height: 500px;transform-style: preserve-3d;}
+        .center{position: absolute;left: 0;top:0;right: 0;bottom: 0;margin:auto;}
+        .pic{height: 100%;position: absolute;transition: transform 1s;}
+	</style>
+</head>
+<body>
+	<div class="wrap center">
+
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+   init();
+   function init(){
+   var n=20;   	
+   	for(var i=0;i<4;i++){   		
+        $('<div class="icon"></div>').appendTo($('.wrap'));
+        var slides=$('.icon:eq('+i+')');
+        for(var j=0;j<n;j++){
+              var w=slides.width()/n;              
+             $('<div class="pic"></div>')
+             .width(w)
+             .css({"left":j*w+"px","background-image":"url(img/"+i+".jpg)","background-position":-w*j+"px 0px","transform":"rotateX("+i*90+"deg) translateZ(250px)","transition":"transform 1s "+j*0.1+"s"})
+             .appendTo(slides);
+
+        }
+   	}
+   }
+   var count=0;
+   function move(){
+   	count++;
+   	$('.icon').each(function(i){
+   		var degree=i*90-count*90;
+        $(this).find('.pic').css({"transform":"rotateX("+degree+"deg) translateZ(250px)"})
+   	})
+   }
+$('body').click(move);
+</script>

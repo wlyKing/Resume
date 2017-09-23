@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	    #wrap{width: 500px;height: 500px;border-radius: 50%;box-shadow: 0 0 80px #333;background:linear-gradient(to bottom,#E8E8E8,#707070,#E8E8E8);position: relative;}
+	    .center{margin: auto;position: absolute;left: 0;right: 0;top: 0;bottom: 0;}
+	    .circle{width: 450px;height: 450px;border-radius: 50%;background: #fff;}
+	    .biaoxin{width: 20px;height: 20px;background: #505050;border-radius: 50%;transform: rotateZ(180deg);}
+        /*时针*/
+        #hours { position: absolute;top: 10px;left: 8px; width: 6px;height:110px; background-color: #0033FF;transform-origin: 50% 0%;}
+        /*分针*/
+        #minute {position: absolute;top: 10px;left: 9px;width: 4px;height: 130px;background-color: #9900FF;transform-origin: 50% 0%;}
+        /*秒针*/
+        #second { position: absolute;top: 10px;left: 10px;width: 2px;height: 175px;background-color: red;transform-origin: 50% 0%;}
+        /*钟表刻度*/
+        ul li {list-style: none;position: absolute;top: 122px;left: 10px;width: 2px;height: 98px;border-bottom: 11px solid black;transform-origin: 0% -102%;}
+        /*钟表小时刻度，就是长一点的那个刻度*/
+        ul li.lang {height: 84px;border-bottom: 25px solid black;}
+        /*钟表上的数字*/
+        .num{font-size: 34px;position: absolute;opacity: .4}
+	</style>
+</head>
+<body>
+	<div id="wrap" class="center">
+       <div class="circle center">
+          <div class="biaoxin center">           
+          <div id ="hours"></div> 
+          <div id ="minute"></div> 
+          <div id ="second"></div> 
+          <ul>   </ul> <!--表盘上的60个刻度-->
+        </div>
+       </div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+     //获取时针 分针 秒针 和ul
+     var oDiv=document.getElementById('wrap')
+     var hour=document.getElementById('hours');
+     var min=document.getElementById('minute');
+     var sec=document.getElementById('second');
+     var oUl=document.getElementsByTagName('ul')[0];
+     //创建存放数字的数组
+     var arr=[6,7,8,9,10,11,12,1,2,3,4,5]
+     //创建刻度
+     var  olis="";
+     for(var i=0;i<60;i++){
+        olis+="<li></li>"
+     }
+     oUl.innerHTML=olis;
+     var oLis=document.getElementsByTagName('li');
+     // var num=[];
+     for(var i=0;i<60;i++){
+         if(i%5==0){
+         	oLis[i].className="lang";
+            // num.push(oLis[i]);
+         }
+         oLis[i].style.transform="rotateZ("+i*6+"deg)";
+     }
+     for(var i=0;i<12;i++){
+     	var  deg=i*Math.PI/6-Math.PI/3*i;
+     	var x1=240+170*Math.sin(deg);
+     	var y1=230+170*Math.cos(deg);
+        var oSpan=document.createElement('span');         
+        oDiv.appendChild(oSpan); 
+        var osapns=document.getElementsByTagName('span');
+         osapns[i].className="num";
+        osapns[i].innerHTML=arr[i];
+        osapns[i].style.left=x1+"px";
+        osapns[i].style.top=y1+"px";
+     }
+     
+     // for(var i=0;i<12;i++){
+       
+     // }
+
+
+
+     function run(){
+     	var date=new Date();
+     	var h=date.getHours();
+     	var m=date.getMinutes();
+     	var s=date.getSeconds();
+     	console.log(h,m,s);
+        //计算角度
+        //秒针 分针 时针
+        hour.style.transform="rotateZ("+(h+m/60+s/3600)*30+"deg)";
+        min.style.transform="rotateZ("+(m+s/60)*6+"deg)";
+        sec.style.transform="rotateZ("+s*6+"deg)";
+         
+         
+     }
+     setInterval(run,1000);
+</script>

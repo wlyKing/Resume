@@ -1,0 +1,68 @@
+ol{list-style: none;}
+.wrap{background: #F2F2F2;}
+.inner{background: #fff;}
+.headline{height: 44px;}
+.headline i{font-size: 18px;color: #6b625b;}
+.headline h2{font-size: 12px;color: #6e6e6e;font-family: "宋体";line-height: 44px;background: #F2F2F2;}
+/*放大镜*/
+.preview{float: left;width: 380px;padding-left: 20px;}
+.preview .change_big{width: 352px;overflow: hidden;}
+.preview ol{width:350px;height: 350px;margin-bottom: 25px;margin:10px 0px;border: 1px solid #C3C3C3;}
+.preview .main_img{position: relative;width: 350px;height: 350px;top: 0;}
+.preview .main_img img{width: 350px;height: 350px;}
+.preview .main_img span{width: 175px;height: 175px;background: #F7ECB5;opacity: .7;position: absolute;left: 0;cursor: move;}
+.preview .hide{display: none;} 
+.preview .big-img{width: 350px;height: 350px;overflow: hidden;position: absolute;top: 258px;left: 750px;border: 1PX solid #C3C3C3;}
+.preview .big-img img{position: absolute;width: 700px;height: 700px;}
+.spec-list{position: relative;height: 55px;top: -56px;}
+.spec-list .prevBtn{position: absolute;top: -20px;left: -4px;font-family: consolas;color:#0E0E0E;font-size: 74px;font-weight: bold;z-index: 2;opacity: .5;}
+.spec-list .nextBtn{position: absolute;top: -20px;right: 0;font-family: consolas;color: #0E0E0E;font-size: 74px;font-weight: bold;z-index: 2;opacity: .5;}
+.spec-items{position: relative;height: 56px;z-index: 2;}
+.spec-items li{width:54px;height:54px;float: left;margin-left: 14px;margin-bottom: 2px;}
+.hide{display: none;}
+.ac{border: 1px solid #C81623;}
+.spec-items li img{width: 100%;height: 100%;}
+.preview-info{float: left;padding-left: 65px;}
+.preview-info h3{padding-top: 10px;font-size: 16px;color: #666;margin-bottom: 5px;line-height: 28px;}
+.preview-info .item{margin-bottom: 5px;font-size: 12px;color: #C81623;}
+.price-wrap{width: 590px;height:50px;background: #C8D0D3;}
+.summary-price{float: left;width: 499px;}
+.preview-info .title{float: left;color: #999;padding-left: 10px;line-height: 50px;}
+.price-num span{float: left;color: #C81623;font-weight: bold;font-size: 20px;line-height: 50px;}
+.price-num a{float: left;font-size: 12px;line-height: 50px;}
+.price-num{float: left;}
+#comment-count{float: left;width: 87px;}
+#comment-count p{font-size: 16px;color: #999;}
+#comment-count a{font-size: 16px;}
+.top .address{float: left;margin-top: 13px;}
+.top .address select{width: 70px;height: 30px;margin-right: 10px;}
+.top .text{font-size: 12px;color: #666;line-height: 50px;}
+.top .text span{font-size: 18px;}
+.bot .text{float: left;font-size: 14px;line-height: 50px;}
+.bot span{color: #C81623;}
+/*类型选择*/
+.choose-size .size{width: 516px;float: right;}
+.choose-size .size li{float: left;border: 2px solid #C5C5C5;min-width: 100px;height: 28px;margin-right: 10px;line-height: 28px;padding: 10px;margin-bottom: 5px;}
+.choose-size .size .active{border: 2px solid #C81623;}
+/*购物车*/
+form{margin-bottom: 20px;display: inline-block;margin: 15px 0 20px 105px;}
+.reduce{float: left;width: 40px;height: 42px;line-height: 42px;text-align: center;font-size: 36px;color:#27303F;border: 1px solid #C5C5C5;cursor: pointer;}
+input{width: 40px;height: 40px;line-height: 40px;text-align: center;border-bottom: 1px solid #C5C5C5;border-top: 1px solid #C5C5C5;float: left;display: block;}
+.plus{float: right;width: 40px;height: 42px;line-height: 42px;text-align: center;font-size: 36px;color:#27303F;border: 1px solid #C5C5C5;cursor: pointer;}
+.btn{width: 150px;height: 50px;cursor: pointer;margin-top: 20px;float: right;background: #C81623;border-radius: 5px;box-shadow: 0 0 10px;font-size: 18px;color: #fff;}
+
+/*选项卡*/
+.tab{border-top: 2px solid #999;margin-top: 20px;height: 387px;border-bottom: 1px solid #ddd;border-left: 1px solid #ddd;border-right: 1px solid #ddd;}
+.tab .nav{height: 29px;border-bottom: 1px solid #ddd;background: #f7f7f7;}
+.tab .nav li {border-right: 1px solid #ddd;display: block;width: 90px;height: 29px;float: left;margin-top: -2px;}
+.tab .nav li a{display:block;height: 29px;line-height: 29px;padding: 0 13px;font-size: 16px;color: #706b68;}
+.tab .nav .act{border-top: 2px solid #a75353;background: #fff;}
+.tab .nav .act a{color: #C81623;}
+.tab .cont-list{height: 234px;}
+.tab .cont-list li{float: left;width: 201px;}
+.tab .cont-list .pic{display: block;margin: 41px 0 23px 0;width: 200px;}
+.tab .cont-list li img{width: 100%;height: 100%;}
+.tab .font{display: block;font-size: 12px;color: #666;line-height: 18px;text-align: center;}
+.tab span{color: #C81623;font-size: 22px;text-align: center;display: block;line-height: 17px;margin-bottom: 21px;}
+.tab .cont-list li a:hover{color: #C81623;}
+.act{border-top: 2px solid #C81623 !important;border-bottom: 1px solid transparent;}

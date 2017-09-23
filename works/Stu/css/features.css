@@ -1,0 +1,62 @@
+h2{ line-height: 144px;height: 144px;margin-top: 27px;font-size: 26px;color: #333134;text-align: center;}
+ .news_list{
+	width: 1140px;
+	height: 317px;
+	margin: 0 auto;
+}
+ .news_list ul{
+	height: 128px;
+}
+ .news_list  li{
+	width: 360px;
+	height: 128px;
+	margin-right: 20px;
+	margin-bottom: 19px;
+	float: left;
+	background-image: url(../images/ser-bg.png);
+}
+.news_list .left a{display: block;}
+ .news_list .left{
+	width: 67px;
+	height: 123px;
+	background: url(../images/s-icons.png) no-repeat 18px 41px;
+	background-color:#F94F01;
+	float: left;
+}
+.news_list .er{background-position: -66px 43px;}
+.news_list .san{background-position: -141px 43px;}
+.news_list .si{background-position: 22px -74px;}
+ .news_list .wu{background-position: -63px -69px;}
+.news_list .liu{background-position: -143px -69px;}
+
+
+.news_list .right {
+	float: left;
+	width:281px;
+	padding-left: 12px;;
+}
+.news_list .right p{
+	font-size: 13px;
+	line-height: 20px;
+	color: #9f9f9f;
+}
+.news_list .right h3{
+	 padding-top: 10px;
+	font-size: 16px;
+	color: #5a5657;
+	font-weight: bold;
+	line-height: 40px;
+	height: 40px;
+}
+h4{ line-height: 86px;height: 86px;font-size: 26px;color: #333134;text-align: center;}
+.featrus{ width: 1140px;height:487px;margin: 0 auto;}
+.beaut{width:380px;height:235px; float:left;}
+.b_icon a{display:block;width: 104px;height: 109px;margin:0 136px 0 140px;background-image: url(../images/img-sprite.png );background-repeat:  no-repeat;background-position:  left  top;}
+.beaut h4{font-size: 18px; color: #4a4a4a;font-weight: normal;line-height: 29px;height: 29px;margin-bottom: 5px;}
+.beaut p{font-size: 12px;color: #7e7e7e;line-height: 23px;text-align: center;}
+.beaut .phone{display:block;width: 354px;height: 215px;margin: 0 9px 15px 17px;}
+.beaut .phone img{width: 354px;height: 215px;}
+.b_icon .auto{background-position: -101px top;}
+.b_icon .responsive{background-position: -201px top;}
+.b_icon .cust{background-position: -301px top;}
+.b_icon .help{background-position: -401px top;}

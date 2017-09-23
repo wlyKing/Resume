@@ -1,0 +1,7 @@
+.main{width: 1140px;margin: 0 auto;text-align: center;padding-top: 58px;}
+.main h2{font-size: 30px;font-weight:normal;color: #020202;line-height: 94px;height: 94px;margin-top: 58px;}
+.main p{font-size: 13px; color:#c5c5c5;line-height: 23px;padding: 0 136px;margin-bottom: 32px;}
+.main .text{width: 333px;height: 47px;line-height:47px;background: #ededed;border:1px solid #dcdbe0;padding: 0 17px;border-radius: 4px; font-size:16px;color: #b9b9b9; font-family: arial;}
+.main textarea{width: 1081px;height: 248px;background: #ededed;border:1px solid #dcdbe0;padding: 0 17px;border-radius: 4px;margin-top: 24px; line-height: 47px;font-size: 16px;color: #aeaeae; font-family: arial;}
+.main .sub{width:225px; height:47px;margin: 45px 0;background: #ed5844;box-shadow: 0 0 8px rgba(0,0,0,0.5) inset;border-radius:4px;font-size: 16px; font-weight: bold; font-family:arial;color: #fff;cursor: pointer;}
+

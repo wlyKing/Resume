@@ -1,0 +1,68 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,dl,dd,input{ margin: 0; padding: 0;}
+body{
+	font-family: arial,"microsoft yahei","宋体";
+}
+ul{
+	list-style: none;
+}
+img,input,textarea{
+	border: none;
+}
+a{
+	text-decoration: none;
+	
+}
+.header{ height: 83px; box-shadow: 0 0 8px rgba(0,0,0,0.5) ; z-index: 2; position: relative;}
+.header .h_inner{
+				width: 1140px;
+				margin: 0 auto;
+}
+.h_inner .logo{ float: left; width: 153px; height: 39px; padding: 15px 152px 0 0;}
+.h_inner ul{ float: left;}
+.h_inner ul li{ float: left;}
+.h_inner ul li a{ display: block;line-height:80px; height:80px; padding: 0 24px; font-size: 15px; color: #465248;border-top: 3px solid transparent;}
+.h_inner ul li .active{background: url(../images/nav_bg_03.jpg)  repeat-x;  border-top: 3px solid #eb5846;color: #e77a11; /*box-shadow: 0 0 65px rgba(0,0,0,0.3) inset;*/}
+.h_inner ul li a:hover{background: url(../images/nav_bg_03.jpg)  repeat-x;  border-top: 3px solid #eb5846;color: #e77a11;}
+.h_inner .icon{ padding-top: 29px; float: right;}
+.h_inner .icon a{ width: 23px; height: 22px; float: left; display: block; margin-left: 7px; background-image: url(../images/s-icons.png); background-repeat: no-repeat;background-position: -242px -7px;}
+.h_inner .icon .er{background-position: -268px -7px;}
+.h_inner .icon .san{background-position: -295px -7px;}
+.h_inner .icon .si{background-position: -320px -7px;}
+.h_inner .icon .wu{background-position: -345px -7px;}
+.h_inner .icon .liu{background-position: -370px -7px;}
+.h_inner .icon .yi:hover{background-position: -242px -46px;}
+.h_inner .icon .er:hover{background-position: -268px -46px;}
+.h_inner .icon .san:hover{background-position: -295px -46px;}
+.h_inner .icon .si:hover{background-position: -320px -46px;}
+.h_inner .icon .wu:hover{background-position: -345px -46px;}
+.h_inner .icon .liu:hover{background-position: -370px -46px;}
+.footer{
+	height: 272px;
+	background-color: #373737;
+}
+.f_inner{
+	width: 1140px;
+     margin: 0 auto;
+     padding-top: 13px;
+}
+.f_inner .about{width: 285px;height: 260px; float: left;}
+.f_inner .about h3{line-height: 48px; height: 48px;background-image: url(../images/finner_bg_03.jpg) ;background-repeat: no-repeat;background-position: left bottom;font-size: 19px;color: #fff;}
+.f_inner .about p{font-size: 14px;color: #919193;line-height: 23px;margin: 18px 0;}
+.f_inner .about a{display:block;height: 37px;
+line-height:37px;font-size;13px;color: #87888d;background-color: #222222;margin: 0 3px 4px 0;padding:0 9px;float: left;}
+.f_inner .tages{padding-top: 25px;}
+.f_inner  .tweets{width: 253px;height: 260px; float: left;} 
+.f_inner .tweets a{color: #c1c1c1;}
+.f_inner .tweets h3{line-height: 48px; height: 48px;background-image:url(../images/finner_bg_03.jpg) ;background-repeat: no-repeat;background-position: left bottom;font-size: 19px;color: #fff;margin-bottom: 18px;}
+.f_inner .tweets p{padding-left: 32px; background: url(../images/tw.png) no-repeat 2px 8px;font-size: 14px;color: #919193;}
+.f_inner .tweets h4{line-height: 33px;height: 33px;font-size: 12px;color: #e8e8e8;padding-left: 30px;}
+.f_inner .feed{width: 271px;height:260px;float: left;margin-left: 30px;}
+.feed h3{line-height: 48px; height: 48px;background-image:url(../images/finner_bg_03.jpg) ;background-repeat: no-repeat;background-position: left bottom;font-size: 19px;color: #fff;}
+.feed a{margin: 0 3px 3px 0;display: block;float: left;}
+.feed .feed_pic {padding: 23px 0 0 2px;}
+.bot{height: 59px;background: #232323;}
+.bot .bot_inner{width: 1140px;margin: 0 auto;}
+.b_logo{float: left;margin-top: 14px;}
+.copyright{float: right;font-size: 16px;color: #949494;padding-top:6px;line-height: 46px;}
+.copyright span{font-size: 16px;color: #bb4738;}
+.fix{background: url(../images/move-top.png) no-repeat;position: fixed;right:10px;bottom: 0;width: 48px;height: 32px; cursor: pointer;}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content=" width=device-width,initial-scale=1.0" />
+		<title>OA后台系统</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/Chart.js"></script>
+		<script src="js/script.js"></script>
+		<style>
+			.user-img {
+				display: inline-block;
+				height: 40px;
+				width: 40px;
+				margin-top: 5px;
+				padding: 0;
+			}
+			
+			.myLable {
+				padding-top: 10px;
+			}
+			
+			.pt20 {
+				padding-top: 20px;
+			}
+			
+			.list-group li {
+				color: #3279b7;
+			}
+			
+			.list-group span {
+				color: #347ab8;
+			}
+			
+			.list-group-item>.badge {
+				float: none;
+				color: #fff;
+			}
+			
+			.navbar-nav li span {
+				background: #F14639;
+				color: #fff;
+			}
+			
+			.wh64 {
+				width: 64px;
+				height: 64px;
+			}
+			
+			.mar_t15 {
+				margin-top: 15px;
+			}
+			.mar_b15{
+				margin-bottom: 15px;
+			}
+			.bor{ border: 1px solid #ddd;padding: 10px;}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+                </button>
+					<a class="navbar-brand" href="#">OA办公系统</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li >
+							<a href="oa后台系统.html" class="glyphicon glyphicon-home">&nbsp;管理首页</a>
+						</li>
+						<li>
+							<a href="user_list.html" class="glyphicon glyphicon-user">&nbsp;用户管理</a>
+						</li>
+						<li>
+							<a href="content.html" class="glyphicon glyphicon-list-alt">&nbsp;内容管理</a>
+						</li>
+						<li class="active">
+							<a href="tag.html" class="glyphicon glyphicon-tag">&nbsp;标签管理</a>
+						</li>
+						<li>
+							<a href="myEmail.html" class="glyphicon glyphicon-envelope">&nbsp;我的邮箱<span class="badge">42</span></a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<div class="user-img">
+								<img src="images/touxiang.jpg" class="img-responsive" />
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle " data-toggle="dropdown">
+								&nbsp;管理员 <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Action</a>
+								</li>
+								<li>
+									<a href="#">Another action</a>
+								</li>
+								<li>
+									<a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+					    <h3>标签管理</h3>
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class="col-md-10 ">					
+				    <form>
+				      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入要添加的内容">
+				    </form>					
+				</div>
+				<div class="col-md-2">
+					<form>
+				      <button class="btn btn-default">添加</button>											
+					</form>
+				</div>
+			</div>
+			<div class="row mar_t15">	
+				<div class="col-md-6">
+					<div class="col-md-4">
+						<div class="alert alert-info alert-dismissible" role="alert">
+						 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						 前端课程
+					    </div>	
+					</div>
+					<div class="col-md-4">
+						<div class="alert alert-info alert-dismissible" role="alert">
+						 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						 前端课程
+					    </div>	
+					</div>
+					<div class="col-md-4">
+						<div class="alert alert-info alert-dismissible" role="alert">
+						 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						    前端课程
+					    </div>	
+					</div>							
+				</div>
+				<div class="col-md-6"></div>				
+			</div>
+			<div class="row mar_t15">
+				<div class="col-md-4 col-md-offset-4">
+					<span>联系方式</span>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script>
+    $(function(){
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            // 获取已激活的标签页的名称
+            var activeTab = $(e.target).text();
+            // 获取前一个激活的标签页的名称
+            var previousTab = $(e.relatedTarget).text();
+            $(".active-tab span").html(activeTab);
+            $(".previous-tab span").html(previousTab);
+        });
+    });
+</script>
